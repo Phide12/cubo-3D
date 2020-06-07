@@ -52,10 +52,10 @@ function loadCube() {
   document.querySelector('.cube').style.transform = 'rotateX(' + -rotacionY + 'deg) rotateY(' + rotacionX + 'deg)';
 }
 
-function startDrag() {
+function startDrag(event) {
   cubeElement.isMoving = true;
-  let currentX = e.originalEvent.touches ?  e.originalEvent.touches[0].pageX : e.pageX;
-  let currentY = e.originalEvent.touches ?  e.originalEvent.touches[0].pageY : e.pageY;
+  let currentX = event.originalEvent.touches ?  event.originalEvent.touches[0].pageX : event.pageX;
+  let currentY = event.originalEvent.touches ?  event.originalEvent.touches[0].pageY : event.pageY;
   cubeElement.startPosX = currentX + rotacionX;
   cubeElement.startPosY = currentY + rotacionY;
   document.querySelector('.cube').classList.toggle("rotate");
