@@ -54,8 +54,8 @@ function loadCube() {
 
 function startDrag(event) {
   cubeElement.isMoving = true;
-  let currentX = event.originalEvent.touches ?  event.originalEvent.touches[0].pageX : event.pageX;
-  let currentY = event.originalEvent.touches ?  event.originalEvent.touches[0].pageY : event.pageY;
+  let currentX = event.touches[0].clientX : event.pageX;
+  let currentY = event.touches[0].clientY : event.pageY;
   cubeElement.startPosX = currentX + rotacionX;
   cubeElement.startPosY = currentY + rotacionY;
   document.querySelector('.cube').classList.toggle("rotate");
