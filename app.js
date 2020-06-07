@@ -54,8 +54,10 @@ function loadCube() {
 
 function startDrag() {
   cubeElement.isMoving = true;
-  cubeElement.startPosX = event.x + rotacionX;
-  cubeElement.startPosY = event.y - rotacionY;
+  let currentX = e.originalEvent.touches ?  e.originalEvent.touches[0].pageX : e.pageX;
+  let currentY = e.originalEvent.touches ?  e.originalEvent.touches[0].pageY : e.pageY;
+  cubeElement.startPosX = currentX + rotacionX;
+  cubeElement.startPosY = currentY + rotacionY;
   document.querySelector('.cube').classList.toggle("rotate");
 }
 
@@ -70,10 +72,8 @@ function checkDrag() {
   if (cubeElement.isMoving) {
     rotacionX = (event.x - cubeElement.startPosX) / Math.PI;
     rotacionY = (event.y - cubeElement.startPosY) / Math.PI;
-    console.log(rotacionX);
-    document.querySelector('.cube').style.transform = 'rotateX(' + -rotacionY + 'deg) rotateY(' + rotacionX + 'deg)';
+    document.querySelector('.cube').style.transform = 'rotateX(' + -rotacionY + 'deg) rotateY(' + -rotacionX + 'deg)';
   }
 }
-
 
 loadCube();
