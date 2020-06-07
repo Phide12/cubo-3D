@@ -58,7 +58,6 @@ function startDrag(event) {
   let currentY = event.touches ? event.touches[0].clientY : event.pageY;
   cubeElement.startPosX = currentX + rotacionX;
   cubeElement.startPosY = currentY + rotacionY;
-  console.log(event);
   document.querySelector('.cube').classList.toggle("rotate");
 }
 
@@ -70,6 +69,7 @@ function stopDrag() {
 }
 
 function checkDrag() {
+  console.log(event);
   if (cubeElement.isMoving) {
     rotacionX = (event.x - cubeElement.startPosX) / Math.PI;
     rotacionY = (event.y - cubeElement.startPosY) / Math.PI;
