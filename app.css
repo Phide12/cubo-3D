@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #333;
+}
+
+.app_wrapp {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.cube_wrapper {
+  margin: auto;
+  height: 15vmin;
+  width:15vmin;
+  
+}
+
+.cube {
+  height: 15vmin;
+  width: 15vmin;
+  transform-style: preserve-3d;
+}
+
+.rotate {
+  /* animation: rotate 6s 1s infinite linear; */
+}
+
+@keyframes rotate {
+  to{
+    transform: rotateY(1turn) rotateX(1turn);
+  }
+}
+
+.cube_side {
+  position: absolute;
+  box-shadow: 0 0 0 2px #fff;
+  background-color: rgba(109, 166, 232, .7);
+}
